@@ -15,6 +15,7 @@ async function main() {
   const providerForSubs = providers[0];
 
   // todo: resubscribe
+  // todo: use as event to update finalized chain height. update sequentially by block number in other task
   const _unsubscribe = await providerForSubs.rpc.chain.subscribeFinalizedHeads(async (header) => {
     console.log(`Finalized block: #${header.number}`);
 

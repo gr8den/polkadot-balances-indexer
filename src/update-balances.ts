@@ -27,5 +27,6 @@ async function updateBalance(providers: ApiPromise[], header: Header, address: s
 export async function updateBalances(providers: ApiPromise[], header: Header, addresses: string[]) {
   // todo: retry
   // todo: timeout
+  // todo: persistence
   await Promise.all(addresses.map(address => updateBalance(providers, header, address)));
 }
